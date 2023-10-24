@@ -5,8 +5,28 @@ import openai
 from llama_index import SimpleDirectoryReader
 
 st.set_page_config(page_title="Converse com Resoluções do Bacen, powered by LlamaIndex", page_icon="🦙", layout="centered", initial_sidebar_state="auto", menu_items=None)
+
+############### reduce top margin ################
+st.markdown(
+        """
+<style>
+    .css-1y4p8pa {
+        padding-top: 0px;
+    }
+</style>
+""",
+        unsafe_allow_html=True,
+    )
+
+############### hidde hamburguer menu ################
+st.markdown(""" <style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style> """, unsafe_allow_html=True)
+
 openai.api_key = st.secrets.openai_key
-st.header("Converse com as Resoluções 4.966 e 309 do Banco Central e outras relacionadas, powered by LlamaIndex 💬🦙")
+st.header("Converse 💬 com as Resoluções 4.966 e 309 do Banco Central e outras relacionadas, powered by LlamaIndex 🦙")
+st.info("Código disponível neste [repositório Github](https://github.com/mvpalheta/4966_LLM)", icon="💡")
          
 if "messages" not in st.session_state.keys(): # Initialize the chat messages history
     st.session_state.messages = [
@@ -30,7 +50,7 @@ if prompt := st.chat_input("Sua pergunta"): # Prompt for user input and save to 
 
 for message in st.session_state.messages: # Display the prior chat messages
     with st.chat_message(message["role"]):
-        st.write(message["content"])
+        st.write(message["content"])        
 
 # If last message is not from assistant, generate a new response
 if st.session_state.messages[-1]["role"] != "assistant":
@@ -40,3 +60,5 @@ if st.session_state.messages[-1]["role"] != "assistant":
             st.write(response.response)
             message = {"role": "assistant", "content": response.response}
             st.session_state.messages.append(message) # Add response to message history
+
+
