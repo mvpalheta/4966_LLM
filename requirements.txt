@@ -1,0 +1,4 @@
+llama_index==0.8.28
+openai==0.28.0
+streamlit==1.25.0
+pypdf == 3.16.2
