@@ -33,7 +33,7 @@ if "messages" not in st.session_state.keys(): # Initialize the chat messages his
         {"role": "assistant", "content": "Me pergunte algo relacionado às Resoluções 4.966 e 309 do Banco Central!"}
     ]
 
-@st.cache_resource(show_spinner=False)
+@st.cache_resource(show_spinner=False, ttl="30min")
 def load_data():
     with st.spinner(text="Loading and indexing the docs – hang tight! This should take 1-2 minutes."):
         reader = SimpleDirectoryReader(input_dir="./data", recursive=True)
