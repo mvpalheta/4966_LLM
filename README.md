@@ -11,7 +11,7 @@ Neste [blog post](https://blog.streamlit.io/build-a-chatbot-with-custom-data-sou
 
 **.streamlit:** Esta pasta contém o arquivo no formato .toml que guarda a chave necessária para consultar a API do LLM utilizado (neste caso é o gpt-3.5-turbo da OpenAI). Para tanto, é necessário criar uma conta no site do LLM de interesse para obter a chave de utilização da API. ATENÇÃO: Alguns LLMs possuem um período de teste sem custo e após isto é cobrado pelo uso.
 
-**data:** Esta pasta contém os dados utilizados pelo Llamaindex para "treinar" o LLM utilizado. Neste caso, são os arquivos PDF das resoluções de interesse, mas poderiam ser outros formatos. Para utilização de arquivos PDF é necessário ter o pacote PYPDF instalado, pois é utilizado no background pelo Llamaindex, ainda que ele não seja importado diretamente no script.
+**data:** Esta pasta contém os dados utilizados pelo Llamaindex para "treinar" o LLM utilizado. Neste caso, são os arquivos PDF das **Resoluções 4.966/2021, 309/2023, 219/2022 e Instrução Normativa 236/2022**, mas poderiam ser outros formatos. Para utilização de arquivos PDF é necessário ter o pacote PYPDF instalado, pois é utilizado no background pelo Llamaindex, ainda que ele não seja importado diretamente no script.
 
 **main_app.py:** Arquivo com a aplicação de assistente virtual.
 
