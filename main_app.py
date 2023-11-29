@@ -25,12 +25,12 @@ footer {visibility: hidden;}
 </style> """, unsafe_allow_html=True)
 
 openai.api_key = st.secrets.openai_key
-st.header("Converse 💬 com as Resoluções 4.966 e 309 do Banco Central e outras relacionadas, powered by LlamaIndex 🦙")
+st.header("Converse 💬 com as Resoluções 4.966 e 352 do Banco Central e outras relacionadas, powered by LlamaIndex 🦙")
 st.info("Código disponível neste [repositório Github](https://github.com/mvpalheta/4966_LLM)", icon="💡")
          
 if "messages" not in st.session_state.keys(): # Initialize the chat messages history
     st.session_state.messages = [
-        {"role": "assistant", "content": "Me pergunte algo relacionado às Resoluções 4.966 e 309 do Banco Central!"}
+        {"role": "assistant", "content": "Me pergunte algo relacionado às Resoluções 4.966 e 352 do Banco Central!"}
     ]
 
 @st.cache_resource(show_spinner=False, ttl="30min")
